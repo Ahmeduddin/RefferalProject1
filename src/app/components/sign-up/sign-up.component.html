@@ -1,0 +1,26 @@
+  <div class="container">
+    <div class="Form">
+  <div class="form-group">
+      <label for="usr">Name:</label>
+      <input type="text" class="form-control" [(ngModel)]="name">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" [(ngModel)]="password">
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" class="form-control" [(ngModel)]="email">
+      </div>
+      <div class="form-group">
+        <button (click)="AddRefferal()"> Add Refferal Code</button>
+      </div>
+      <div *ngIf="isRefferal" class="form-group">
+          <label for="refferal">Refferal:</label>
+          <input type="text" class="form-control" [(ngModel)]="refferal">
+      </div>
+      <div class="form-group">
+          <button (click)="AddUser()">Sign Up</button>
+      </div>
+  </div>
+</div>
