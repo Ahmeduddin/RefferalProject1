@@ -1,4 +1,4 @@
-  <div class="container">
+  <!-- <div class="container">
     <div class="Form">
   <div class="form-group">
       <label for="usr">Name:</label>
@@ -22,5 +22,67 @@
       <div class="form-group">
           <button (click)="AddUser()">Sign Up</button>
       </div>
+  </div>
+</div> -->
+
+<div class="bg-image">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8 col-sm-10">
+        <div class="form-outer" id="">
+          <ul class="nav nav-tabs" id="signin-combo" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">log in</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="sign-up-tab" data-toggle="tab" href="#sign-up" role="tab" aria-controls="sign-up" aria-selected="false">sign up</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="signin-forms">
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                <div class="form-row">
+                  <div class="form-group col-12">
+                    <label for="name">Username:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Name" [(ngModel)]="username">
+                  </div>
+                  <div class="form-group col-12">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="name" placeholder="*****" [(ngModel)]="password">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <input type="button" (click)="Login()" class="btn btn-primary btn-block" value="log in">
+                  </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="sign-up" role="tabpanel" aria-labelledby="sign-up-tab">
+              <!-- <form action="" id="signup"> -->
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="fName">Name:</label>
+                    <input type="text" placeholder="Name" [(ngModel)]="name" class="form-control">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="lName">Password:</label>
+                    <input type="password" placeholder="Password" [(ngModel)]="password" class="form-control">
+                  </div>
+                  <div class="form-group col-12">
+                    <label for="email">Email:</label>
+                    <input type="text" class="form-control" id="name" [(ngModel)]="email" placeholder="Email">
+                  </div>
+                  <div class="form-group col-12">
+                    <label for="refferal">Refferal Code:</label>
+                    <input type="text" class="form-control" id="name" [(ngModel)]="refferal" placeholder="Refferal Code">
+                  </div>
+                </div>
+                <input type="button" value="Sign Up" (click)="AddUser()" class="btn btn-primary">
+              <!-- </form> -->
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
   </div>
 </div>

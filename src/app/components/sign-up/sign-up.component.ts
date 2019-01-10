@@ -15,6 +15,7 @@ export class SignUpComponent implements OnInit {
   password: string;
   isRefferal: Boolean = false;
   refferal: string;
+  username: string;
 
   constructor(private userService: UserService) { }
 
@@ -41,14 +42,24 @@ export class SignUpComponent implements OnInit {
       email: this.email,
       password: this.password,
       refferal_id: this.generateRandomNumber(),
-      isRefferal: false
+      isRefferal: ''
     }
-    if(this.isRefferal) {
+    if (this.refferal) {
       console.log('already contained refferal id')
-      payload.refferal_id = this.refferal;
-      payload.isRefferal = true;
+      payload.isRefferal = this.refferal;
+      this.email = '';
+      this.password = '';
+      this.refferal = '';
     }
     this.userService.SignUp(payload);
+  }
+
+  Login() {
+    console.log('button is clicked')
+    if(this.username && this.password) {
+      console.log('button is clicked')
+      this.userService.SignIn({name: this.username, password: this.password});
+    }
   }
 
 }
